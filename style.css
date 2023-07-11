@@ -1,0 +1,126 @@
+@font-face {
+    font-family:'PP Neue Montreal';
+    src: url('fonts/PP-Neue-Montreal/PPNeueMontreal-Book.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+* {
+    font-family: 'PP Neue Montreal', 'Times New Roman', sans-serif;
+    font-style: normal; 
+}
+
+body, html {
+    margin: 0;
+}
+
+h2 {
+    font-size: 100px;
+}
+
+/* ---------------------------------- Header Nav --------------------------------------------- */
+
+.header {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100px;
+    display: grid;
+}
+
+#defaultCanvas0 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+
+.navlinks {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.navlinks a {
+    font-weight: 500;
+    color: #fff;
+}
+
+/* ---------------------------------- Over- and Underlay --------------------------------------------- */
+
+#honest_overlay {
+    position: absolute;
+    width: 100%;
+    background: #C4B0FF;
+    z-index: 2;
+    clip-path: circle(40px at center);
+    pointer-events: none;
+}
+
+#professional_underlay {
+    position: absolute;
+    width: 100%;
+    background: #040932;
+    color: #C4B0FF;
+    z-index: 1;
+}
+
+/* ---------------------------------- Spinning Text --------------------------------------------- */
+
+svg {
+    position: absolute;
+    top: 220px;
+    left: 130px;
+    fill: currentColor;
+    height: auto;
+    transform-origin: center;
+    width: 200px;
+    animation: spin 6s linear infinite;
+    color: yellow;
+  }
+
+  @keyframes spin {
+    0% {
+      transform: translate(-50%, -50%) rotate(360deg);
+    }
+    100% {
+      transform: translate(-50%, -50%) rotate(0deg);
+    }
+  }
+
+  /* ---------------------------------- Content --------------------------------------------- */
+
+.landing_text_container {
+    margin-top: 300px;
+    margin-bottom: 200px;
+}
+
+.landing_text {
+    width: 50vw;
+    text-align: center;
+    margin: auto;
+}
+
+  /* ---------------------------------- Me Container --------------------------------------------- */
+
+.me_container {
+    display: flex;
+    align-items: flex-end;
+}
+
+.me_container p {
+    margin: 50px;
+    font-size: 60px;
+}
+
+.portrait_me {
+    width: 500px;
+    border-radius: 15px;
+    margin: 50px;
+}
+
