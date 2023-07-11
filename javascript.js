@@ -70,17 +70,17 @@ aElements.forEach(a => {
   });
 });
 
-// imgElements.forEach(img => {
-//   img.addEventListener('mouseenter', () => {
-//     // Update the target size to double the size of the mouse circle when hovering over an h2 element
-//     targetSize = 300;
-//   });
+ imgElements.forEach(img => {
+   img.addEventListener('mouseenter', () => {
+     // Update the target size to double the size of the mouse circle when hovering over an h2 element
+     targetSize = 300;
+   });
 
-//   img.addEventListener('mouseout', () => {
-//     // Update the target size to the default size of the mouse circle when the mouse moves out of an h2 element
-//     targetSize = 50;
-//   });
-// });
+   img.addEventListener('mouseout', () => {
+     // Update the target size to the default size of the mouse circle when the mouse moves out of an h2 element
+     targetSize = 50;
+   });
+ });
 
 pElements.forEach(p => {
   p.addEventListener('mouseover', () => {
