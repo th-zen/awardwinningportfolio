@@ -8,13 +8,13 @@ function draw() {
     translate(-width / 2, -height / 2);
     background(0, 0);
     translate(50, 50, 0);
-    rotateY(mouseX / PI / 90);
-    rotateX(mouseY / PI / 120 - 450);
+    rotateY(mouseX / PI / 90 - 6);
+    rotateX(mouseY / PI / 120 - 20);
     noFill();
     stroke(0);
-    box(50);
+    //box(50);
     noStroke();
-    fill("#EACE2D");
+    fill("#e9ca32");
     sphere(30);
     stroke(0);
     fill(0);
