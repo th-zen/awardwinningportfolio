@@ -6,12 +6,12 @@ function setup() {
 }
 function draw() {
     translate(-width / 2, -height / 2);
-    background("#040932");
+    background(0, 0);
     translate(50, 50, 0);
     rotateY(mouseX / PI / 90);
     rotateX(mouseY / PI / 120 - 450);
     noFill();
-    stroke(255);
+    stroke(0);
     box(50);
     noStroke();
     fill("#EACE2D");
