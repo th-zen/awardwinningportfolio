@@ -8,23 +8,11 @@ let mouseX = 0;
 let mouseY = 0;
 let circlesize = 50;
 let targetSize = circlesize;
-let debugvar = 0;
-let pageoffset = 0;
-
-// window.addEventListener('scroll', e => {
-//   pageoffset = window.pageYOffset;
-// });
 
 container.addEventListener('mousemove', e => {
   mouseX = e.clientX;
   mouseY = e.clientY;
-  console.log(mouseX, mouseY)
 });
-
-
-
-
-
 
 function updateCircleSize() {
 
@@ -37,59 +25,71 @@ function updateCircleSize() {
     circlesize += step;
   }
 
-  // console.log(sizeDifference, circlesize)
-
-  topDiv.style.clipPath = `circle(${circlesize}px at ${mouseX}px ${mouseY + window.pageYOffset}px)`;
+  topDiv.style.clipPath = `circle(${circlesize}px at ${mouseX}px ${mouseY + window.scrollY}px)`;
 
   requestAnimationFrame(updateCircleSize);
 }
 
 updateCircleSize();
 
-h2Elements.forEach(h2 => {
-  h2.addEventListener('mouseover', () => {
-    // Update the target size to double the size of the mouse circle when hovering over an h2 element
-    targetSize = 200;
-  });
-
-  h2.addEventListener('mouseout', () => {
-    // Update the target size to the default size of the mouse circle when the mouse moves out of an h2 element
-    targetSize = 50;
-  });
-});
-
+// Update the target size size of the mouse circle when hovering over an a element
 aElements.forEach(a => {
   a.addEventListener('mouseover', () => {
-    // Update the target size to double the size of the mouse circle when hovering over an h2 element
     targetSize = 20;
   });
-
   a.addEventListener('mouseout', () => {
-    // Update the target size to the default size of the mouse circle when the mouse moves out of an h2 element
     targetSize = 50;
   });
 });
 
- imgElements.forEach(img => {
-   img.addEventListener('mouseenter', () => {
-     // Update the target size to double the size of the mouse circle when hovering over an h2 element
-     targetSize = 300;
-   });
 
-   img.addEventListener('mouseout', () => {
-     // Update the target size to the default size of the mouse circle when the mouse moves out of an h2 element
-     targetSize = 50;
-   });
- });
 
-pElements.forEach(p => {
-  p.addEventListener('mouseover', () => {
-    // Update the target size to double the size of the mouse circle when hovering over an h2 element
-    targetSize = 150;
-  });
 
-  p.addEventListener('mouseout', () => {
-    // Update the target size to the default size of the mouse circle when the mouse moves out of an h2 element
-    targetSize = 50;
+// Get the parent element that contains the elements with the "hover" class
+const parentElement = document.getElementById('professional_underlay');
+
+// Add event listener to the parent element
+parentElement.addEventListener('mouseover', (event) => {
+  // Check if the hovered element has the "hover" class
+  if (event.target.classList.contains('hover')) {
+    targetSize = 200;
+  }
+  else if (event.target.classList.contains('hover120')) {
+    targetSize = 120;
+  }
+  else if (event.target.classList.contains('hover350')) {
+    targetSize = 350;
+  }
+});
+
+// Add event listener to reset the targetSize when mouse leaves the parent element
+parentElement.addEventListener('mouseout', () => {
+  targetSize = 50;
+});
+
+
+
+
+//STORYTEXT DISPLAY BLOCK WHEN HOVERED
+const story_start = document.querySelector('.story_start');
+const storytext = document.querySelector('.storytext');
+const storytexts = document.querySelectorAll('.storytext');
+const story_beginning = document.querySelector('.story_beginning');
+
+story_start.addEventListener('mouseenter', () => {
+  storytexts.forEach(storytext => {
+    storytext.style.maxHeight = storytext.scrollHeight + 'px';
+    story_beginning.style.transition = 'opacity 0s';
+    story_beginning.style.opacity = '1.0';
   });
 });
+
+storytext.addEventListener('mouseout', () => {
+  storytexts.forEach(storytext => {
+    storytext.style.transition = 'max-height 0.8s ease';
+    storytext.style.maxHeight = '0';
+    story_beginning.style.transition = 'opacity 0.5s ease';
+    story_beginning.style.opacity = '0';
+  });
+});
+

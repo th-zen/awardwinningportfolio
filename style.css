@@ -7,16 +7,34 @@
 
 
 * {
-    font-family: 'PP Neue Montreal', 'Times New Roman', sans-serif;
-    font-style: normal; 
+    font-family: 'Montserrat', 'Times New Roman', sans-serif;
+    font-style: normal;
 }
 
 body, html {
     margin: 0;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 h2 {
     font-size: 100px;
+    font-weight: 500;
+}
+
+p {
+    margin: 0;
+    font-size: 25px;
+}
+
+.sub_title {
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.title {
+    font-size: 45px;
+    font-weight: 600;
 }
 
 /* ---------------------------------- Header Nav --------------------------------------------- */
@@ -25,7 +43,6 @@ h2 {
     position: absolute;
     top: 0;
     left: 0;
-
     display: flex;
     flex-direction: row;
     width: 100%;
@@ -35,8 +52,8 @@ h2 {
 
 #defaultCanvas0 {
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 350px;
+    left: calc(50% + 590px);
     z-index: 2;
 }
 
@@ -48,7 +65,7 @@ h2 {
 
 .navlinks a {
     font-weight: 500;
-    color: #fff;
+    color: #000;
 }
 
 /* ---------------------------------- Over- and Underlay --------------------------------------------- */
@@ -56,71 +73,179 @@ h2 {
 #honest_overlay {
     position: absolute;
     width: 100%;
-    background: #C4B0FF;
+    background: #e9ca32;
     z-index: 2;
     clip-path: circle(40px at center);
     pointer-events: none;
 }
 
+.red {
+    color: #fff;
+}
+
 #professional_underlay {
     position: absolute;
     width: 100%;
-    background: #040932;
-    color: #C4B0FF;
+    background: #ffffff;
+    color: #000000;
     z-index: 1;
 }
 
+/* ---------------------------------- Infinite Scroll Container --------------------------------------------- */
+.infinite_scroll_container {
+    display: flex;
+    width: 100%;
+    white-space: nowrap;
+}
+
+.infinite_scroll_text {
+    text-transform: uppercase;
+    font-size: 600px;
+    font-weight: 900;
+    animation: animate_text 20s linear infinite;
+}
+
+.infinite_scroll_text span {
+    margin: 0 200px;
+    font-weight: Condensed Bold;
+}
+
+@keyframes animate_text {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+}
+
+
+
 /* ---------------------------------- Spinning Text --------------------------------------------- */
 
-svg {
+.circle_text {
     position: absolute;
-    top: 220px;
-    left: 130px;
+    top: 300px;
+    left: calc(50% + 540px);
+    width: 200px;
+}
+
+svg {
     fill: currentColor;
     height: auto;
     transform-origin: center;
     width: 200px;
     animation: spin 6s linear infinite;
-    color: yellow;
+    pointer-events: none;
   }
 
-  @keyframes spin {
+  /* @keyframes spin {
     0% {
       transform: translate(-50%, -50%) rotate(360deg);
     }
     100% {
       transform: translate(-50%, -50%) rotate(0deg);
     }
-  }
+  } */
 
-  /* ---------------------------------- Content --------------------------------------------- */
+  /* ---------------------------------- Landing Container --------------------------------------------- */
 
 .landing_text_container {
-    margin-top: 300px;
-    margin-bottom: 200px;
+    padding-top: 300px;
+    height: calc(100vh - 400px);
+    text-align: center;
 }
 
 .landing_text {
-    width: 50vw;
-    text-align: center;
-    margin: auto;
+    display: block;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.flash1 {
+    position: absolute;
+    top: 200px;
+    left: calc(50% - 600px);
+}
+
+.flash2 {
+    position: absolute;
+    top: 800px;
+    left: calc(50% - 800px);
+    transform: rotate(-115deg);
+}
+
+.flash3 {
+    position: absolute;
+    top: 700px;
+    left: calc(50% + 700px);
+    transform: rotate(125deg)
 }
 
   /* ---------------------------------- Me Container --------------------------------------------- */
 
 .me_container {
     display: flex;
-    align-items: flex-end;
-}
-
-.me_container p {
-    margin: 50px;
-    font-size: 60px;
+    align-items: flex-start;
+    padding: 0 138px;
 }
 
 .portrait_me {
-    width: 500px;
+    height: 580px;
     border-radius: 15px;
-    margin: 50px;
+}
+
+.me_container > div:first-of-type {
+    display: flex;
+    flex-direction: column;
+    margin-left: 30px;
+    position: relative;
+    top: -5px;
+    height: 580px;
+}
+
+.me_container .title {
+    margin-bottom: 60px;
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1;
+}
+
+.bulletpoint {
+    display: flex;
+    flex-direction: row;
+    min-width: 450px;
+}
+
+.bulletpoint img {
+    position: relative;
+    top: 6px;
+    width: 21px;
+    height: 21px;
+    margin-right: 10px;
+}
+
+.storytext {
+    position: relative;
+    padding-left: 585px;
+    padding-right: 138px;
+    line-height: 50px;
+    max-height: 0px;
+    overflow: hidden;
+    transition: max-height 0.8s ease;
+}
+
+.invisible {
+    top: -45px;
+    color: #ffffff00;
+}
+
+.story_beginning {
+    opacity: 0;
+    transition: opacity 0.8s ease;
 }
 
