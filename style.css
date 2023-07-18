@@ -188,7 +188,7 @@ svg {
 .me_container {
     display: flex;
     align-items: flex-start;
-    padding: 0 138px;
+    padding: 100px 138px;
 }
 
 .portrait_me {
@@ -198,7 +198,7 @@ svg {
 
 .shine {
     position: absolute;
-    top: 1800px;
+    top: 1950px;
     left: 150px;
     pointer-events: none;
 }
@@ -277,7 +277,7 @@ svg {
     display: flex;
     justify-content: flex-start;
     width: 100%;
-    margin: 400px 0;
+    margin: 350px 0;
     margin-left: calc(50vw - 285px);
     padding: auto;
 }
