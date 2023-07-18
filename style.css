@@ -171,8 +171,8 @@ svg {
 
 .flash2 {
     position: absolute;
-    top: 800px;
-    left: calc(50% - 800px);
+    top: 840px;
+    left: calc(50% - 820px);
     transform: rotate(-115deg);
 }
 
