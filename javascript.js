@@ -32,19 +32,6 @@ function updateCircleSize() {
 
 updateCircleSize();
 
-// Update the target size size of the mouse circle when hovering over an a element
-aElements.forEach(a => {
-  a.addEventListener('mouseover', () => {
-    targetSize = 20;
-  });
-  a.addEventListener('mouseout', () => {
-    targetSize = 50;
-  });
-});
-
-
-
-
 // Get the parent element that contains the elements with the "hover" class
 const parentElement = document.getElementById('professional_underlay');
 
@@ -57,8 +44,11 @@ parentElement.addEventListener('mouseover', (event) => {
   else if (event.target.classList.contains('hover120')) {
     targetSize = 120;
   }
-  else if (event.target.classList.contains('hover350')) {
-    targetSize = 350;
+  else if (event.target.classList.contains('hover550')) {
+    targetSize = 550;
+  }
+  else if (event.target.classList.contains('hover20')) {
+    targetSize = 20;
   }
 });
 

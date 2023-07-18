@@ -9,6 +9,7 @@
 * {
     font-family: 'Montserrat', 'Times New Roman', sans-serif;
     font-style: normal;
+    /* cursor: none; */
 }
 
 body, html {
@@ -151,7 +152,7 @@ svg {
   /* ---------------------------------- Landing Container --------------------------------------------- */
 
 .landing_text_container {
-    padding-top: 300px;
+    padding-top: 350px;
     height: calc(100vh - 400px);
     text-align: center;
 }
@@ -195,6 +196,17 @@ svg {
     border-radius: 15px;
 }
 
+.shine {
+    position: absolute;
+    top: 1800px;
+    left: 150px;
+    pointer-events: none;
+}
+
+.me_container .sub_title {
+    width: 910px;
+}
+
 .me_container > div:first-of-type {
     display: flex;
     flex-direction: column;
@@ -229,6 +241,16 @@ svg {
     margin-right: 10px;
 }
 
+.invisible_hover {
+    opacity: 1;
+    transition: opacity 0.2s ease;
+}
+
+.invisible_hover:hover {
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
 .storytext {
     position: relative;
     padding-left: 585px;
@@ -239,7 +261,7 @@ svg {
     transition: max-height 0.8s ease;
 }
 
-.invisible {
+.invisible_storytext {
     top: -45px;
     color: #ffffff00;
 }
@@ -249,3 +271,159 @@ svg {
     transition: opacity 0.8s ease;
 }
 
+/* ---------------------------------- Currently Based in --------------------------------------------- */
+
+.currentlybased {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    margin: 400px 0;
+    margin-left: calc(50vw - 285px);
+    padding: auto;
+}
+
+.currentlybased p {
+    margin: 0 5px;
+}
+
+/* ---------------------------------- Collab Section --------------------------------------------- */
+
+.collab_container {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 138px;
+    margin-bottom: 400px;
+}
+
+.collab_text {
+    text-align: start;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.teamfoto {
+    border-radius: 15px;
+    height: 580px;
+    margin-left: 30px;
+}
+
+.bobi_link {
+    position:absolute;
+    color: white;
+    font-size: 30px;
+    top: 3670px;
+    right: 200px;
+    pointer-events:fill;
+}
+
+.tobi_link {
+    position:absolute;
+    color: white;
+    font-size: 20px;
+    top: 3600px;
+    right: 700px;
+    pointer-events: all;
+}
+
+.arthur_link {
+    position:absolute;
+    color: white;
+    font-size: 8px;
+    top: 3600px;
+    right: 150px;
+    pointer-events: all;
+}
+
+/* ---------------------------------- Proficiency Section --------------------------------------------- */
+
+.proficiency_container {
+    margin-bottom: 700px;
+}
+
+.proficiency_container img {
+    height: 150px;
+}
+
+.proficiency_container img:first-child { /* proficient in */
+    position: absolute;
+    top: 4000px;
+    left: 260px;
+}
+
+.proficiency_container img:nth-child(2){ /* CSS3 */
+    position: absolute;
+    top: 4300px;
+    rotate: -12deg;
+    left: 600px;
+}
+
+.proficiency_container img:nth-child(3){ /* Figma */
+    position: absolute;
+    left: 1400px;
+    top: 4150px;
+    rotate: -7deg
+}
+
+.proficiency_container img:nth-child(4){ /* HTML5 */
+    position: absolute;
+    top: 4000px;
+    left: 940px;
+    rotate: 15deg;
+}
+
+.proficiency_container img:nth-child(5){ /* JS */
+    position: absolute;
+    top: 4360px;
+    left: 1000px;
+    rotate: 3deg;
+}
+
+.proficiency_container img:nth-child(6){ /* XD */
+    height: 130px;
+    position: absolute;
+    top: 4480px;
+    left: 1550px;
+    rotate: 13deg;
+}
+
+.proficiency_container img:nth-child(7){ /* Steps */
+    height: 90px;
+    position: absolute;
+    top: 4450px;
+    left: 160px;
+}
+
+.proficiency_container img:nth-child(8){ /* Chat GPT */
+    height: 130px;
+    position: absolute;
+    top: 4480px;
+    left: -100px;
+}
+
+/* ---------------------------------- Projects Section --------------------------------------------- */
+
+.img_star1 {
+    position: relative;
+    top: -100px;
+    left: 1100px;
+}
+
+.img_star2 {
+    position: relative;
+    top: -300px;
+    left: -1800px;
+}
+
+
+
+
+
+
+
+
+
+
+.invisible {
+    opacity: 0;
+}
