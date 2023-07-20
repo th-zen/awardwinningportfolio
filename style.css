@@ -102,7 +102,6 @@ p {
     display: flex;
     width: 100%;
     white-space: nowrap;
-    margin-bottom: 200px;
 }
 
 .infinite_scroll_text {
@@ -203,8 +202,8 @@ svg {
 }
 
 .shine {
-    position: absolute;
-    top: 2050px;
+    position: relative;
+    top: 250px;
     left: 150px;
     pointer-events: none;
 }
@@ -283,7 +282,7 @@ svg {
     display: flex;
     justify-content: flex-start;
     width: 100%;
-    margin: 350px 0;
+    margin: 450px 0;
     margin-left: calc(50vw - 285px);
     padding: auto;
 }
@@ -443,7 +442,7 @@ svg {
 .project_container {
     padding: 138px;
     display: flex;
-    margin-bottom: 150px;
+    margin: 150px 0;
 }
 
 .sg_reel {
@@ -455,14 +454,14 @@ svg {
 }
 
 .project_video {
-    width: 1100px;
+    width: 54vw;
     margin-right: 80px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     transition: width 0.5s ease, height 0.5s ease, box-shadow 0.5s ease;
 }
   
 .project_video.play {
-    width: 1120px;
+    width: 55vw;
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4), 0 12px 40px 0 rgba(0, 0, 0, 0.38);
 }
 
@@ -477,12 +476,22 @@ svg {
 /* ---------------------------------- Contact Section --------------------------------------------- */
 
 .contact_container {
-    height: 75vh;
 }
+
+.contact_container img{
+    position: relative;
+    top: -100px;
+    left: calc(50vw - 786px);
+    pointer-events: none;
+}
+
+.contact_container .arrowfield_empty {
+    height: 1024px;
+} 
 
 .contact_button {
     position: relative;
-    top: 30%;
+    top: 450px;
     display: flex;
     justify-content: center;
 }
@@ -499,7 +508,6 @@ svg {
     background-color: black;
     color: white;
 }
-
 
 
 
