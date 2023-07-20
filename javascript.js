@@ -83,3 +83,27 @@ storytext.addEventListener('mouseout', () => {
   });
 });
 
+
+//PLAY VIDEO WHEN HOVERING OVER IT
+const videoElements = document.querySelectorAll('.project_video');
+const project_text = document.querySelectorAll('.project_text');
+
+videoElements.forEach((video, index) => {
+  video.addEventListener('mouseover', () => {
+    videoElements[index].classList.add('play');
+    videoElements[index + (videoElements.length/2)].classList.add('play');
+    project_text[index].style.opacity = '1';
+    videoElements[index].play();
+    videoElements[index + (videoElements.length/2)].play();
+  });
+
+  video.addEventListener('mouseout', () => {
+    videoElements[index].classList.remove('play');
+    videoElements[index + (videoElements.length/2)].classList.remove('play');
+    project_text[index].style.opacity = '0';
+    videoElements[index].pause();
+    videoElements[index + (videoElements.length/2)].pause();
+  });
+});
+
+

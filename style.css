@@ -61,12 +61,17 @@ p {
 .navlinks {
     display: flex;
     justify-content: space-around;
+    padding: 0 138px;
     align-items: center;
 }
 
 .navlinks a {
     font-weight: 500;
     color: #000;
+}
+
+.thausingpng {
+    
 }
 
 /* ---------------------------------- Over- and Underlay --------------------------------------------- */
@@ -92,18 +97,19 @@ p {
     z-index: 1;
 }
 
-/* ---------------------------------- Infinite Scroll Container --------------------------------------------- */
+/* ---------------------------------- Infinite Scroll Container About --------------------------------------------- */
 .infinite_scroll_container {
     display: flex;
     width: 100%;
     white-space: nowrap;
+    margin-bottom: 200px;
 }
 
 .infinite_scroll_text {
     text-transform: uppercase;
     font-size: 600px;
     font-weight: 900;
-    animation: animate_text 20s linear infinite;
+    animation: animate_text 10s linear infinite;
 }
 
 .infinite_scroll_text span {
@@ -113,7 +119,7 @@ p {
 
 @keyframes animate_text {
     from {
-      transform: translateX(0);
+      transform: translateX(0%);
     }
     to {
       transform: translateX(-100%);
@@ -188,7 +194,7 @@ svg {
 .me_container {
     display: flex;
     align-items: flex-start;
-    padding: 100px 138px;
+    padding: 0 138px;
 }
 
 .portrait_me {
@@ -198,7 +204,7 @@ svg {
 
 .shine {
     position: absolute;
-    top: 1950px;
+    top: 2050px;
     left: 150px;
     pointer-events: none;
 }
@@ -309,36 +315,41 @@ svg {
 }
 
 .bobi_link {
-    position:absolute;
+    position:relative;
     color: white;
     font-size: 30px;
-    top: 3670px;
-    right: 200px;
     pointer-events:fill;
+    left: 1500px;
+    text-shadow: -3px 0 black, 0 3px black, 3px 0 black, 0 -3px black;
+    width: 200px;
 }
 
 .tobi_link {
-    position:absolute;
+    position:relative;
     color: white;
     font-size: 20px;
-    top: 3600px;
-    right: 700px;
     pointer-events: all;
+    left: 1000px;
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+    width: 200px;
 }
 
 .arthur_link {
-    position:absolute;
+    position:relative;
     color: white;
     font-size: 8px;
-    top: 3600px;
-    right: 150px;
     pointer-events: all;
+    left: 1700px;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    width: 60px;
 }
+
 
 /* ---------------------------------- Proficiency Section --------------------------------------------- */
 
 .proficiency_container {
     margin-bottom: 700px;
+    min-width:max-content;
 }
 
 .proficiency_container img {
@@ -346,79 +357,148 @@ svg {
 }
 
 .proficiency_container img:first-child { /* proficient in */
-    position: absolute;
-    top: 4000px;
+    position: relative;
     left: 260px;
 }
 
 .proficiency_container img:nth-child(2){ /* CSS3 */
-    position: absolute;
-    top: 4300px;
+    position: relative;
+    top: 300px;
     rotate: -12deg;
-    left: 600px;
+    left: 300px;
 }
 
 .proficiency_container img:nth-child(3){ /* Figma */
-    position: absolute;
-    left: 1400px;
-    top: 4150px;
+    position: relative;
+    left: 1000px;
+    top: 150px;
     rotate: -7deg
 }
 
 .proficiency_container img:nth-child(4){ /* HTML5 */
-    position: absolute;
-    top: 4000px;
-    left: 940px;
+    position: relative;
+    left: 340px;
     rotate: 15deg;
 }
 
 .proficiency_container img:nth-child(5){ /* JS */
-    position: absolute;
-    top: 4360px;
-    left: 1000px;
+    position: relative;
+    top: 360px;
+    left: 380px;
     rotate: 3deg;
 }
 
 .proficiency_container img:nth-child(6){ /* XD */
     height: 130px;
-    position: absolute;
-    top: 4480px;
-    left: 1550px;
+    position: relative;
+    top: 480px;
+    left: 650px;
     rotate: 13deg;
 }
 
 .proficiency_container img:nth-child(7){ /* Steps */
     height: 90px;
-    position: absolute;
-    top: 4450px;
-    left: 160px;
+    position: relative;
+    top: 450px;
+    left: -1100px;
 }
 
 .proficiency_container img:nth-child(8){ /* Chat GPT */
     height: 130px;
-    position: absolute;
-    top: 4480px;
-    left: -100px;
+    position: relative;
+    top: 550px;
+    left: -1560px;
 }
 
 /* ---------------------------------- Projects Section --------------------------------------------- */
 
-.img_star1 {
-    position: relative;
-    top: -100px;
-    left: 1100px;
+.star_container {
+    width: 0;
+    height: 0;
 }
 
-.img_star2 {
+.star1 {
     position: relative;
     top: -300px;
-    left: -1800px;
+    left: 500px;
+}
+
+.star2 {
+    position: relative;
+    left: 1150px;
+}
+
+.star3 {
+    position: relative;
+    top: -200px;
+    left: 1500px;
+}
+
+.star4 {
+    position: relative;
+    top: -80px;
+    left: 2200px;
+}
+
+.project_container {
+    padding: 138px;
+    display: flex;
+    margin-bottom: 150px;
+}
+
+.sg_reel {
+    transform: rotate(-3deg);
+}
+
+.monkeygif {
+    transform: rotate(3deg);
+}
+
+.project_video {
+    width: 1100px;
+    margin-right: 80px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    transition: width 0.5s ease, height 0.5s ease, box-shadow 0.5s ease;
+}
+  
+.project_video.play {
+    width: 1120px;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4), 0 12px 40px 0 rgba(0, 0, 0, 0.38);
+}
+
+.project_text{
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    transition: opacity 0.5s ease;
 }
 
 
+/* ---------------------------------- Contact Section --------------------------------------------- */
 
+.contact_container {
+    height: 75vh;
+}
 
+.contact_button {
+    position: relative;
+    top: 30%;
+    display: flex;
+    justify-content: center;
+}
 
+.contact_button a {
+    border: solid black 2px;
+    border-radius: 100px;
+    padding: 30px;
+    text-decoration: none;
+    color: black;
+}
+
+.cb_overlay a {
+    background-color: black;
+    color: white;
+}
 
 
 
