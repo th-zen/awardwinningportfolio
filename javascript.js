@@ -8,6 +8,9 @@ let mouseX = 0;
 let mouseY = 0;
 let circlesize = 50;
 let targetSize = circlesize;
+let isPressed = false;
+
+const professional_underlay = document.getElementById('professional_underlay');
 
 container.addEventListener('mousemove', e => {
   mouseX = e.clientX;
@@ -25,18 +28,24 @@ function updateCircleSize() {
     circlesize += step;
   }
 
-  topDiv.style.clipPath = `circle(${circlesize}px at ${mouseX}px ${mouseY + window.scrollY}px)`;
-
+  if(window.innerWidth > 600){
+    topDiv.style.clipPath = `circle(${circlesize}px at ${mouseX}px ${mouseY + window.scrollY}px)`;
+  }
+  else {
+    topDiv.style.clipPath = `circle(${circlesize}px at 50% ${85 * window.innerHeight / 100 + window.scrollY}px)`;
+  }
   requestAnimationFrame(updateCircleSize);
 }
+
 
 updateCircleSize();
 
 // Get the parent element that contains the elements with the "hover" class
-const parentElement = document.getElementById('professional_underlay');
+
 
 // Add event listener to the parent element
-parentElement.addEventListener('mouseover', (event) => {
+if(window.innerWidth > 600){
+professional_underlay.addEventListener('mouseover', (event) => {
   // Check if the hovered element has the "hover" class
   if (event.target.classList.contains('hover')) {
     targetSize = 200;
@@ -51,12 +60,39 @@ parentElement.addEventListener('mouseover', (event) => {
     targetSize = 20;
   }
 });
+}
+else {
+  topDiv.addEventListener('mousedown', () => {
+    isPressed = true;
+    targetSize = 800; // Change the target size to 800 when pressed
+  });
+  
+  // Add event listener to detect mouse release on the circle mask
+  topDiv.addEventListener('mouseup', () => {
+    isPressed = false;
+    targetSize = 50; // Reset the target size to the original size when released
+  });
+}
 
 // Add event listener to reset the targetSize when mouse leaves the parent element
-parentElement.addEventListener('mouseout', () => {
+professional_underlay.addEventListener('mouseout', () => {
   targetSize = 50;
+  isPressed = false;
 });
 
+
+//HOVER ELEMENT MASK SIZE CHANGE WHEN IN MOBILE MODE
+const circleButton = document.querySelector('.circle-button');
+
+circleButton.addEventListener('mousedown', () => {
+  isPressed = true;
+  targetSize = 800; // Change the target size to 800 when the circle button is pressed
+});
+
+circleButton.addEventListener('mouseup', () => {
+  isPressed = false;
+  targetSize = 50; // Reset the target size to the original size when the circle button is released
+});
 
 
 
@@ -65,7 +101,7 @@ const story_start = document.querySelector('.story_start');
 const storytext = document.querySelector('.storytext');
 const storytexts = document.querySelectorAll('.storytext');
 const story_beginning = document.querySelector('.story_beginning');
-
+if(window.innerWidth > 600){
 story_start.addEventListener('mouseenter', () => {
   storytexts.forEach(storytext => {
     storytext.style.maxHeight = storytext.scrollHeight + 'px';
@@ -82,7 +118,7 @@ storytext.addEventListener('mouseout', () => {
     story_beginning.style.opacity = '0';
   });
 });
-
+}
 
 //PLAY VIDEO WHEN HOVERING OVER IT
 const videoElements = document.querySelectorAll('.project_video');

@@ -38,6 +38,20 @@ p {
     font-weight: 600;
 }
 
+.circle-button {
+    background-color: blue;
+    position: fixed;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%; /* Make it circular */
+    cursor: pointer;
+    /* Adjust the position of the circle button as needed */
+    left: 50%;
+    bottom: 10vh;
+    transform: translateX(-50%);
+    pointer-events: none;
+  }
+
 /* ---------------------------------- Header Nav --------------------------------------------- */
 
 .header {
@@ -53,7 +67,7 @@ p {
 
 #defaultCanvas0 {
     position: absolute;
-    top: 350px;
+    top: calc(50vh - 270px);
     left: calc(50% + 590px);
     z-index: 2;
 }
@@ -70,9 +84,6 @@ p {
     color: #000;
 }
 
-.thausingpng {
-    
-}
 
 /* ---------------------------------- Over- and Underlay --------------------------------------------- */
 
@@ -131,7 +142,7 @@ p {
 
 .circle_text {
     position: absolute;
-    top: 300px;
+    top: calc(50vh - 320px);
     left: calc(50% + 540px);
     width: 200px;
 }
@@ -141,25 +152,18 @@ svg {
     height: auto;
     transform-origin: center;
     width: 200px;
-    animation: spin 6s linear infinite;
     pointer-events: none;
   }
-
-  /* @keyframes spin {
-    0% {
-      transform: translate(-50%, -50%) rotate(360deg);
-    }
-    100% {
-      transform: translate(-50%, -50%) rotate(0deg);
-    }
-  } */
 
   /* ---------------------------------- Landing Container --------------------------------------------- */
 
 .landing_text_container {
-    padding-top: 350px;
-    height: calc(100vh - 400px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
+    height: 100vh;
 }
 
 .landing_text {
@@ -170,20 +174,20 @@ svg {
 
 .flash1 {
     position: absolute;
-    top: 200px;
+    top: calc(50vh - 430px);
     left: calc(50% - 600px);
 }
 
 .flash2 {
     position: absolute;
-    top: 840px;
+    top: calc(50vh + 250px);
     left: calc(50% - 820px);
     transform: rotate(-115deg);
 }
 
 .flash3 {
     position: absolute;
-    top: 700px;
+    top: calc(50vh + 100px);
     left: calc(50% + 700px);
     transform: rotate(125deg)
 }
@@ -201,11 +205,19 @@ svg {
     border-radius: 15px;
 }
 
+.shine_container {
+    height: auto;
+}
+
 .shine {
     position: relative;
     top: 250px;
     left: 150px;
     pointer-events: none;
+}
+
+.formattingline {
+    display: none;
 }
 
 .me_container .sub_title {
@@ -276,6 +288,13 @@ svg {
     transition: opacity 0.8s ease;
 }
 
+.mobile_story {
+    position: absolute;
+    left: 30px;
+    top: 553px;
+    display: none;
+}
+
 /* ---------------------------------- Currently Based in --------------------------------------------- */
 
 .currentlybased {
@@ -293,11 +312,19 @@ svg {
 
 /* ---------------------------------- Collab Section --------------------------------------------- */
 
+.collab_outercontainer {
+    display: flex;
+    width: calc(100vw + 600px);
+    min-width: 1600px;
+    margin-bottom: 500px;
+}
+
 .collab_container {
     display: flex;
     justify-content: space-between;
-    padding: 0 138px;
-    margin-bottom: 400px;
+    width: calc(100vw - 276px);
+    min-width: 1600px;
+    padding-left: 138px;
 }
 
 .collab_text {
@@ -315,98 +342,108 @@ svg {
 
 .bobi_link {
     position:relative;
+    left: -300px;
+    top: 150px;
     color: white;
     font-size: 30px;
-    pointer-events:fill;
-    left: 1500px;
+    pointer-events: fill;
     text-shadow: -3px 0 black, 0 3px black, 3px 0 black, 0 -3px black;
     width: 200px;
+    height: 40px;
 }
 
 .tobi_link {
     position:relative;
+    left: -1000px;
+    top: 270px;
     color: white;
     font-size: 20px;
     pointer-events: all;
-    left: 1000px;
     text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
-    width: 200px;
+    min-width: 200px;
+    height: 30px;
 }
 
 .arthur_link {
     position:relative;
+    left: -520px;
+    top: 300px;
     color: white;
     font-size: 8px;
     pointer-events: all;
-    left: 1700px;
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-    width: 60px;
+    width: 100px;
+    height: 10px;
 }
 
 
 /* ---------------------------------- Proficiency Section --------------------------------------------- */
 
 .proficiency_container {
-    margin-bottom: 700px;
-    min-width:max-content;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+   /* min-width:max-content; */
 }
 
 .proficiency_container img {
     height: 150px;
+    object-fit: contain;
 }
 
 .proficiency_container img:first-child { /* proficient in */
     position: relative;
-    left: 260px;
+    left: 12%;
 }
 
 .proficiency_container img:nth-child(2){ /* CSS3 */
     position: relative;
-    top: 300px;
+    top: 100px;
+    left: 28%;
     rotate: -12deg;
-    left: 300px;
 }
 
 .proficiency_container img:nth-child(3){ /* Figma */
     position: relative;
-    left: 1000px;
-    top: 150px;
-    rotate: -7deg
+    
+    left: 70%;
+    rotate: -7deg;
 }
 
 .proficiency_container img:nth-child(4){ /* HTML5 */
     position: relative;
-    left: 340px;
+    top: -400px;
+    left: 45%;
     rotate: 15deg;
 }
 
 .proficiency_container img:nth-child(5){ /* JS */
     position: relative;
-    top: 360px;
-    left: 380px;
+    top: -100px;
+    left: 53%;
     rotate: 3deg;
 }
 
 .proficiency_container img:nth-child(6){ /* XD */
     height: 130px;
     position: relative;
-    top: 480px;
-    left: 650px;
+    top: -170px;
+    left: 80%;
     rotate: 13deg;
 }
 
 .proficiency_container img:nth-child(7){ /* Steps */
     height: 90px;
     position: relative;
-    top: 450px;
-    left: -1100px;
+    top: -300px;
+    left: 130px;
 }
 
 .proficiency_container img:nth-child(8){ /* Chat GPT */
     height: 130px;
     position: relative;
-    top: 550px;
-    left: -1560px;
+    top: -300px;
+    left: -100px;
 }
 
 /* ---------------------------------- Projects Section --------------------------------------------- */
@@ -451,6 +488,7 @@ svg {
 
 .monkeygif {
     transform: rotate(3deg);
+    /* object-fit: cover; */
 }
 
 .project_video {
@@ -475,12 +513,9 @@ svg {
 
 /* ---------------------------------- Contact Section --------------------------------------------- */
 
-.contact_container {
-}
-
 .contact_container img{
     position: relative;
-    top: -100px;
+    top: calc(50vh - 540px);
     left: calc(50vw - 786px);
     pointer-events: none;
 }
@@ -491,7 +526,7 @@ svg {
 
 .contact_button {
     position: relative;
-    top: 450px;
+    top: 50vh;
     display: flex;
     justify-content: center;
 }
@@ -509,9 +544,368 @@ svg {
     color: white;
 }
 
-
-
-
+/* ---------------------------------- Invisibility --------------------------------------------- */
 .invisible {
     opacity: 0;
+}
+
+
+
+
+
+
+
+/* -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/* -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/* -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+@media screen and (max-width:1500px){
+
+    * {
+        /* background-color: blue; */
+    }
+
+    #defaultCanvas0 {
+        top: calc(50vh - 340px);
+        left: calc(50% + 390px);
+    }
+
+    .circle_text {
+        top: calc(50vh - 390px);
+        left: calc(50% + 340px);
+    }
+
+/* ---------------------------------- Proficiency Section --------------------------------------------- */
+
+.proficiency_container img:nth-child(2){ /* CSS3 */
+    top: 200px;
+}
+
+.proficiency_container img:nth-child(3){ /* Figma */
+     top: 100px;
+}
+
+.proficiency_container img:nth-child(4){ /* HTML5 */
+     top: -300px;
+}
+
+.proficiency_container img:nth-child(5){ /* JS */
+    top: 0;
+}
+
+.proficiency_container img:nth-child(6){ /* XD */
+    top: -70px;
+}
+
+.proficiency_container img:nth-child(7){ /* Steps */
+    top: -200px;
+}
+
+.proficiency_container img:nth-child(8){ /* Chat GPT */
+    top: -200px;
+}
+
+}
+
+/* -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/* -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/* -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+@media screen and (max-width:1150px){
+
+
+/* ---------------------------------- About Me Section --------------------------------------------- */
+
+.me_container {
+    flex-direction: column;
+}
+
+.portrait_me{
+    margin-bottom: 80px;
+}
+
+.me_container > div:first-of-type {
+    margin-left: 0;
+}
+
+.storytext {
+    padding-left: 170px;
+    padding-right: 20px;
+}
+
+/* ---------------------------------- Collab Section --------------------------------------------- */
+
+.collab_outercontainer{
+    flex-direction: column;
+}
+
+.collab_container{
+    flex-direction: column;
+}
+
+.teamfoto{
+    margin-top: 80px;
+    margin-left: 0;
+    height: 580px;
+    width: 870px;
+}
+
+.tobi_link {
+    left: 270px;
+    top: -300px;
+    width: 200px;
+}
+
+.bobi_link {
+    left: 750px;
+    top: -200px;
+}
+
+.arthur_link {
+    left: 900px;
+    top: -360px;
+}
+
+/* ---------------------------------- Project Section --------------------------------------------- */
+
+.project_container{
+    flex-direction: column;
+}
+
+.project_video {
+    margin: 80px 0;
+}
+
+}
+
+
+/* -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/* -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/* -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+@media screen and (max-width:600px){
+
+    h2 {
+        font-size: 60px;
+        font-weight: 500;
+    }
+
+    .circle-button {
+        pointer-events: all;
+    }
+
+    .invisible_hover:hover {
+        opacity: 1;
+    }
+
+/* ---------------------------------- Landing Section --------------------------------------------- */
+
+    .landing_text_container {
+        height: 90vh;
+        margin-bottom: 10vh;
+    }
+
+    .circle_text {
+        top: calc(45vh - 15px);
+        left: calc(50% + 100px);
+        z-index: -1;
+    }
+
+    .circle_text svg {
+        width: 130px;
+        height: 130px;
+    }
+
+    .circle_text text {
+        font-size: 15px;
+    }
+
+    #defaultCanvas0 {
+        top: calc(45vh);
+        left: calc(50% + 115px);
+        animation: spin 6s linear infinite;
+    }
+
+   @keyframes spin {
+    0% {
+      transform: rotateZ(360deg);
+    }
+    100% {
+      transform: rotateZ(0deg);
+    }
+  } 
+  
+/* ---------------------------------- Infinite Scroll Container About --------------------------------------------- */
+
+.infinite_scroll_text {
+    font-size: 200px;
+}
+
+.infinite_scroll_text span {
+    margin: 0 100px;
+}
+
+  /* ---------------------------------- Me Container --------------------------------------------- */
+
+.me_container {
+    padding: 0 20px;
+}
+
+.portrait_me {
+    height: auto;
+    width: 100%;
+}
+
+.shine_container {
+    height: 50px;
+}
+
+.shine {
+    top: 50px;
+    left: 50px;
+}
+
+.me_container .sub_title {
+    width: auto;
+}
+
+.formattingline {
+    display: block;
+}
+
+.storytext {
+    padding-left: 53px;
+    padding-right: 20px;
+}
+
+.mobile_story {
+    display: inline;
+}
+
+/* ---------------------------------- Currently Based in --------------------------------------------- */
+
+.currentlybased {
+    flex-direction: column;
+    margin-left: 0;
+    align-items: center;
+    margin: 300px 0;
+}
+
+.currentlybased P {
+    text-align: center;
+}
+
+/* ---------------------------------- Collab Section --------------------------------------------- */
+
+.collab_outercontainer {
+    width: 100vw;
+    min-width: 100vw;
+    margin-bottom: 100px;
+}
+
+.collab_container{
+    width: 100vw;
+    min-width: 100vw;
+    padding-left: 20px;
+}
+
+.collab_text {
+    padding-right: 20px;
+}
+
+.collab_text div:first-of-type{
+    margin-bottom: 60px;
+}
+
+.teamfoto {
+    height: auto;
+    width: calc(100vw - 40px);
+}
+
+.tobi_link {
+    font-size: 15px;
+    left: 50px;
+    top: -200px;
+}
+
+.bobi_link {
+    font-size: 15px;
+    left: 300px;
+    top: -80px;
+}
+
+.arthur_link {
+    left: 380px;
+    top: -200px;
+}
+
+/* ---------------------------------- Proficiency Section --------------------------------------------- */
+
+.proficiency_container img:first-child { /* proficient in */
+    position: relative;
+    width: 300px;
+    left: 10%;
+}
+
+.proficiency_container img:nth-child(7){ /* Steps */
+    top: -200px;
+    left: 50px;
+}
+
+.proficiency_container img:nth-child(6){ /* XD */
+    top: 60px;
+    left: 55%;
+}
+
+/* ---------------------------------- Projects Section --------------------------------------------- */
+.star1 {
+    top: -90px;
+    left: 500px;
+}
+
+.star3 {
+    top: 30px;
+    left: 600px;
+}
+
+.project_container {
+    padding: 20px;
+    margin: 0 20px 200px;
+
+}
+
+.sg_reel {
+    width: 100%;
+}
+
+.monkeygif {
+    width: 100%;
+}
+
+.project_video.play {
+    width: 100%;
+}
+
+.project_text {
+    opacity: 1 !important;
+}
+
+/* ---------------------------------- Contact Section --------------------------------------------- */
+.contact_container {
+    height: 800px;
+    overflow: hidden;
+}
+
+.contact_container img {
+    top: calc(50vh - 640px);
+    left: calc(50vw - 786px);
+}
+
+.contact_container .arrowfield_empty {
+    height: 600px;
+}
+
+.contact_button {
+    top: 40vh;
+}
 }
