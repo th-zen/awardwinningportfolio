@@ -84,12 +84,12 @@ professional_underlay.addEventListener('mouseout', () => {
 //HOVER ELEMENT MASK SIZE CHANGE WHEN IN MOBILE MODE
 const circleButton = document.querySelector('.circle-button');
 
-circleButton.addEventListener('mousedown', () => {
+circleButton.addEventListener('touchstart', () => {
   isPressed = true;
   targetSize = 800; // Change the target size to 800 when the circle button is pressed
 });
 
-circleButton.addEventListener('mouseup', () => {
+circleButton.addEventListener('touchend', () => {
   isPressed = false;
   targetSize = 50; // Reset the target size to the original size when the circle button is released
 });

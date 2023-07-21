@@ -512,6 +512,10 @@ svg {
 
 /* ---------------------------------- Contact Section --------------------------------------------- */
 
+.contact_container {
+    height: 100vh;
+}
+
 .contact_container img{
     position: relative;
     top: calc(50vh - 540px);
@@ -525,7 +529,7 @@ svg {
 
 .contact_button {
     position: relative;
-    top: 50vh;
+    top: calc(50vh - 50px);
     display: flex;
     justify-content: center;
 }
