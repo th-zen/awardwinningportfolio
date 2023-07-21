@@ -49,6 +49,7 @@ p {
     bottom: 10vh;
     transform: translateX(-50%);
     pointer-events: none;
+    user-select: none;
   }
 
 /* ---------------------------------- Header Nav --------------------------------------------- */
