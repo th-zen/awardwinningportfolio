@@ -9,13 +9,12 @@
 * {
     font-family: 'Montserrat', 'Times New Roman', sans-serif;
     font-style: normal;
+    outline: 1px solid red;
     /* cursor: none; */
 }
 
 body, html {
     margin: 0;
-    max-width: 100%;
-    overflow-x: hidden;
 }
 
 h2 {
@@ -113,6 +112,7 @@ p {
     display: flex;
     width: 100%;
     white-space: nowrap;
+    overflow-x: hidden;
 }
 
 .infinite_scroll_text {
@@ -164,6 +164,7 @@ svg {
     align-items: center;
     text-align: center;
     height: 100vh;
+    overflow-x: hidden;
 }
 
 .landing_text {
@@ -189,7 +190,7 @@ svg {
     position: absolute;
     top: calc(50vh + 100px);
     left: calc(50% + 700px);
-    transform: rotate(125deg)
+    transform: rotate(125deg);
 }
 
   /* ---------------------------------- Me Container --------------------------------------------- */
@@ -220,17 +221,22 @@ svg {
     display: none;
 }
 
-.me_container .sub_title {
-    width: 910px;
+.award_flex {
+    display: flex;
+}
+
+.inline {
+    display: inline-block;
+    min-width: 217px;
 }
 
 .me_container > div:first-of-type {
     display: flex;
     flex-direction: column;
     margin-left: 30px;
-    position: relative;
     top: -5px;
     height: 580px;
+    width: calc(100% - 400px);
 }
 
 .me_container .title {
@@ -300,7 +306,7 @@ svg {
 .currentlybased {
     display: flex;
     justify-content: flex-start;
-    width: 100%;
+    max-width: fit-content;
     margin: 450px 0;
     margin-left: calc(50vw - 285px);
     padding: auto;
@@ -314,17 +320,17 @@ svg {
 
 .collab_outercontainer {
     display: flex;
-    width: calc(100vw + 600px);
-    min-width: 1600px;
+    /* width: calc(100vw + 600px);
+    min-width: 1600px; */
     margin-bottom: 500px;
 }
 
 .collab_container {
     display: flex;
     justify-content: space-between;
-    width: calc(100vw - 276px);
-    min-width: 1600px;
-    padding-left: 138px;
+    /* width: calc(100vw - 276px);
+    min-width: 1600px; */
+    padding: 0 138px;
 }
 
 .collab_text {
@@ -336,26 +342,36 @@ svg {
 
 .teamfoto {
     border-radius: 15px;
-    height: 580px;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
     margin-left: 30px;
+}
+
+.teamfoto img {
+    width: 100%;
+    height: 100%; 
+    object-fit: cover; 
+    object-position: center;
 }
 
 .bobi_link {
     position:relative;
-    left: -300px;
-    top: 150px;
+    left: 43%;
+    top: -35%;
     color: white;
-    font-size: 30px;
+    font-size: 1.6vw;
     pointer-events: fill;
     text-shadow: -3px 0 black, 0 3px black, 3px 0 black, 0 -3px black;
-    width: 200px;
-    height: 40px;
+    /* width: 200px;
+    height: 40px; */
+    transform: translate(-50%, -50%);
 }
 
 .tobi_link {
     position:relative;
-    left: -1000px;
-    top: 270px;
+    left: 0;
+    top: -40%;
     color: white;
     font-size: 20px;
     pointer-events: all;
@@ -366,8 +382,8 @@ svg {
 
 .arthur_link {
     position:relative;
-    left: -520px;
-    top: 300px;
+    left: 0;
+    top: -20%;
     color: white;
     font-size: 8px;
     pointer-events: all;
@@ -565,10 +581,6 @@ svg {
 
 @media screen and (max-width:1500px){
 
-    * {
-        /* background-color: blue; */
-    }
-
     #defaultCanvas0 {
         top: calc(50vh - 340px);
         left: calc(50% + 390px);
@@ -650,8 +662,8 @@ svg {
 .teamfoto{
     margin-top: 80px;
     margin-left: 0;
-    height: 580px;
-    width: 870px;
+    /* height: 100%;
+    width: auto; */
 }
 
 .tobi_link {
@@ -689,8 +701,12 @@ svg {
 
 @media screen and (max-width:600px){
 
+    p {
+        font-size: 18px;
+    }
+
     h2 {
-        font-size: 60px;
+        font-size: 40px;
         font-weight: 500;
     }
 
@@ -786,6 +802,10 @@ svg {
     display: inline;
 }
 
+.title {
+    font-size: 30px;
+}
+
 /* ---------------------------------- Currently Based in --------------------------------------------- */
 
 .currentlybased {
@@ -808,9 +828,10 @@ svg {
 }
 
 .collab_container{
-    width: 100vw;
-    min-width: 100vw;
+    max-width: 100%;
+    min-width: none;
     padding-left: 20px;
+    word-wrap: break-word;
 }
 
 .collab_text {
